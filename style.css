@@ -1,0 +1,100 @@
+/* ===== COULEURS (modifiables ici) ===== */
+:root{
+  --poudre:#f4d9d6; --vieux:#c98f96; --vieux-fonce:#a86a74;
+  --champagne:#f1e3d0; --beige:#faf3ea; --or:#b8935a; --texte:#5a3a40;
+  --serif:'Cormorant Garamond',Georgia,serif; --script:'Pinyon Script','Brush Script MT',cursive;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif);font-size:1.25rem;line-height:1.7;color:var(--texte);text-align:center;
+  background:
+    radial-gradient(ellipse at 20% 0%,rgba(244,217,214,.7),transparent 55%),
+    radial-gradient(ellipse at 90% 60%,rgba(241,227,208,.9),transparent 50%),
+    var(--beige);
+  overflow-x:hidden;
+}
+/* grain de vieux papier */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.14;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+section,header,footer{padding:4.5rem 1.4rem;max-width:960px;margin:0 auto;position:relative;z-index:2}
+p+p{margin-top:1rem}
+.script{font-family:var(--script);font-weight:400;color:var(--vieux-fonce)}
+.big{font-size:clamp(2.4rem,7vw,3.6rem);line-height:1.2;margin-bottom:1rem}
+
+/* ===== ACCUEIL ===== */
+.hero{padding-top:3.5rem}
+.hero .small{font-size:clamp(1.6rem,5vw,2.2rem)}
+.hero h1{display:flex;justify-content:center;align-items:baseline;gap:.6rem;line-height:1;margin:.2rem 0 1.4rem}
+.hero .num{font-size:clamp(6rem,24vw,10rem);font-weight:600;color:var(--vieux);font-style:italic;
+  background:linear-gradient(160deg,var(--vieux) 30%,var(--or));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .script{font-size:clamp(3rem,11vw,5rem)}
+.arch{width:min(320px,78vw);aspect-ratio:3/4.2;margin:0 auto 2rem;border-radius:999px 999px 14px 14px;padding:10px;
+  border:2px solid var(--or);background:var(--champagne);box-shadow:0 18px 40px rgba(168,106,116,.28)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:999px 999px 8px 8px;display:block}
+.lead{font-size:1.8rem;font-style:italic;color:var(--vieux-fonce)}
+.when{letter-spacing:.08em;margin:.3rem 0 1.8rem}
+.btn{display:inline-block;font:600 1.05rem var(--serif);letter-spacing:.14em;text-decoration:none;cursor:pointer;
+  color:#fff;background:linear-gradient(135deg,var(--vieux),var(--vieux-fonce));padding:1rem 2.2rem;border:1px solid var(--or);
+  border-radius:60px;box-shadow:0 8px 22px rgba(168,106,116,.35);transition:transform .25s,box-shadow .25s}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px rgba(168,106,116,.45);outline:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+
+/* ===== CADRE PAPIER ===== */
+.paper .frame{background:var(--champagne);padding:2.6rem 1.6rem;border:1px solid var(--or);outline:1px solid var(--or);outline-offset:-10px;
+  border-radius:4px;box-shadow:0 14px 36px rgba(184,147,90,.2)}
+.frame p{max-width:34em;margin-inline:auto}
+
+/* ===== DÉTAILS ===== */
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem}
+.details article{padding:1.8rem 1rem;background:rgba(255,255,255,.5);border-top:2px solid var(--vieux);border-radius:0 0 90px 90px/0 0 40px 40px}
+.details h2{font-size:2.2rem;line-height:1.2}
+.swatches{display:flex;justify-content:center;gap:.5rem;margin-top:.8rem}
+.swatches i{width:26px;height:26px;border-radius:50%;border:1px solid var(--or)}
+
+/* ===== COMPTE À REBOURS ===== */
+.cd{display:flex;justify-content:center;gap:clamp(.6rem,3vw,1.6rem);flex-wrap:wrap}
+.cd div{min-width:78px;padding:1rem .6rem;background:var(--champagne);border:1px solid var(--or);border-radius:50% 50% 12px 12px/40% 40% 12px 12px}
+.cd b{display:block;font-size:2.4rem;font-weight:600;color:var(--vieux-fonce);line-height:1.1}
+.cd span{font-style:italic;font-size:1rem}
+
+/* ===== CADEAUX ===== */
+.gift{padding-block:2rem}
+.gift p{font-size:1.5rem;font-style:italic;max-width:30em;margin:auto;padding:1.8rem 1.4rem;border-block:1px solid var(--or);color:var(--vieux-fonce)}
+
+/* ===== GALERIE ===== */
+.grid{columns:2 150px;column-gap:.8rem}
+.grid figure{break-inside:avoid;margin-bottom:.8rem;padding:6px;background:#fff;border:1px solid var(--poudre);box-shadow:0 6px 16px rgba(90,58,64,.14);cursor:zoom-in;overflow:hidden}
+.grid figure:nth-child(odd){transform:rotate(-.8deg)}.grid figure:nth-child(even){transform:rotate(.8deg)}
+.grid img{width:100%;display:block;transition:transform .5s}
+.grid figure:hover img{transform:scale(1.04)}
+@media(min-width:720px){.grid{columns:3}}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(40,22,26,.9);display:flex;align-items:center;justify-content:center;padding:1rem}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:100%;max-height:92vh;border:6px solid #fff}
+.lightbox button{position:absolute;top:1rem;right:1.2rem;font-size:2.6rem;color:#fff;background:none;border:0;cursor:pointer}
+
+/* ===== RSVP / PIED ===== */
+.rsvp p{margin-bottom:1.8rem}
+footer{padding-bottom:6rem}footer .script{font-size:2rem}
+
+/* ===== MUSIQUE ===== */
+.music{position:fixed;right:.8rem;bottom:.8rem;z-index:60;display:flex;gap:.4rem}
+.music button{font:600 1rem var(--serif);cursor:pointer;color:var(--vieux-fonce);background:rgba(250,243,234,.95);border:1px solid var(--or);border-radius:40px;padding:.6rem 1rem;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.music button.on{background:var(--vieux);color:#fff}
+
+/* ===== DIALOG ===== */
+dialog{margin:auto;max-width:min(420px,90vw);padding:2rem;border:1px solid var(--or);background:var(--beige);color:var(--texte);border-radius:8px;text-align:center}
+dialog::backdrop{background:rgba(40,22,26,.55)}
+dialog .btn{margin-top:1.2rem;padding:.7rem 1.6rem}
+
+/* ===== PÉTALES ===== */
+.petals{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petal{position:absolute;top:-30px;width:14px;height:18px;background:var(--poudre);border-radius:100% 0 100% 0;opacity:.8;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(540deg)}}
+
+/* ===== APPARITION (au défilement) ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+.hero{animation:fadein 1.4s both}@keyframes fadein{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.petals{display:none}}

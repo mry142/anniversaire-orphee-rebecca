@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mes 30 ans · Soirée Vintage Rosé · 12 décembre 2026</title>
+<meta name="description" content="Vous êtes invité(e) à célébrer mes 30 ans, samedi 12 décembre 2026 à 22 h 00 à Bouaké. Dress code : rose.">
+
+<!-- Aperçu WhatsApp : remplacez VOTRE-SITE.vercel.app par votre vrai lien après publication -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mes 30 ans · Soirée Vintage Rosé 🌸">
+<meta property="og:description" content="Samedi 12 décembre 2026 à 22 h 00 · Bouaké. Dress code : rose. Confirmez votre présence !">
+<meta property="og:image" content="https://VOTRE-SITE.vercel.app/images/og.jpg">
+<meta property="og:url" content="https://VOTRE-SITE.vercel.app/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- ===== MUSIQUE ===== -->
+<div class="music" role="group" aria-label="Musique">
+  <button id="btnPlay" type="button" aria-label="Lecture / Pause">♪ <span>Musique</span></button>
+  <button id="btnMute" type="button" aria-label="Activer / couper le son">🔊</button>
+</div>
+<audio id="audio" loop preload="none"></audio>
+
+<!-- ===== ACCUEIL ===== -->
+<header class="hero">
+  <p class="script small">Vous êtes invité(e) à célébrer</p>
+  <h1><span class="num">30</span><span class="script">ans</span></h1>
+  <div class="arch">
+    <img src="images/photo10.jpg" alt="Portrait de la reine de la soirée" width="854" height="1280">
+  </div>
+  <p class="lead">Soirée Vintage Rosé</p>
+  <p class="when">Samedi 12 décembre 2026 · 22 h 00</p>
+</header>
+
+<!-- ===== MESSAGE ===== -->
+<section class="paper reveal">
+  <div class="frame">
+    <p class="script big">Chers amis, chère famille,</p>
+    <p>Trente années de rires, de belles rencontres et de souvenirs précieux. Pour ce grand tournant, je vous invite à une soirée douce, romantique et festive, baignée de rose et de nostalgie d'autrefois.</p>
+    <p>Venez célébrer avec moi ce moment qui ne revient qu'une fois.</p>
+  </div>
+</section>
+
+<!-- ===== DÉTAILS ===== -->
+<section class="details reveal">
+  <article><h2 class="script">Date</h2><p>Samedi<br>12 décembre 2026</p></article>
+  <article><h2 class="script">Heure</h2><p>22 h 00</p></article>
+  <article><h2 class="script">Thème</h2><p>Vintage Rosé</p></article>
+  <article>
+    <h2 class="script">Dress code</h2>
+    <p>Rose, de la tête aux pieds</p>
+    <div class="swatches" aria-hidden="true"><i style="background:#f4d9d6"></i><i style="background:#e5b4b8"></i><i style="background:#c98f96"></i><i style="background:#a86a74"></i></div>
+  </article>
+</section>
+
+<!-- ===== COMPTE À REBOURS ===== -->
+<section class="countdown reveal" aria-live="polite">
+  <h2 class="script big">Plus que…</h2>
+  <div class="cd" id="cd">
+    <div><b id="cd-d">--</b><span>jours</span></div>
+    <div><b id="cd-h">--</b><span>heures</span></div>
+    <div><b id="cd-m">--</b><span>minutes</span></div>
+    <div><b id="cd-s">--</b><span>secondes</span></div>
+  </div>
+</section>
+
+<!-- ===== CADEAUX ===== -->
+<section class="gift reveal">
+  <p>« Votre présence me fera énormément plaisir, et pour rendre cette célébration encore plus spéciale, n'oubliez surtout pas de venir avec vos cadeaux. 🎁 »</p>
+</section>
+
+<!-- ===== LIEU ===== -->
+<section class="paper reveal">
+  <div class="frame">
+    <h2 class="script big">Le lieu</h2>
+    <p><strong>La célébration aura lieu à Bouaké, quartier Kennedy.</strong></p>
+    <p>Pour des raisons d'organisation, l'adresse exacte ainsi que la localisation seront communiquées uniquement aux invités ayant confirmé leur présence.</p>
+  </div>
+</section>
+
+<!-- ===== GALERIE ===== -->
+<section class="gallery reveal">
+  <h2 class="script big">Trente ans en images</h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- ===== RSVP ===== -->
+<section class="rsvp reveal" id="rsvp">
+  <h2 class="script big">Serez-vous des nôtres ?</h2>
+  <p>Répondez en quelques secondes. Vous recevrez ensuite l'adresse exacte.</p>
+  <a class="btn" id="rsvpBtn" href="#" target="_blank" rel="noopener">CONFIRMER MA PRÉSENCE</a>
+</section>
+
+<footer><p class="script">Avec tout mon amour, à très vite 🌸</p></footer>
+
+<!-- Fenêtre (lien non configuré) -->
+<dialog id="dlg"><p id="dlgMsg"></p><button class="btn" id="dlgClose" type="button">Fermer</button></dialog>
+
+<!-- Visionneuse photo -->
+<div class="lightbox" id="lb" hidden><button type="button" id="lbClose" aria-label="Fermer">×</button><img id="lbImg" alt=""></div>
+
+<script src="script.js"></script>
+</body>
+</html>
